@@ -21,47 +21,6 @@ Diego Alonso Iquira Becerra
 
 **3er Año - 2026 - B**
 
-## Descripción
-
-Guía Práctica 05: aplicación de los principios SOLID en un sistema de gestión de reservas de hotel.
-
-Los ejercicios 01 al 05 se desarrollan y ejecutan de forma independiente. El ejercicio 06 reúne los principios en una aplicación integrada.
-
-**Lenguaje:** C++17.
-
-## Estructura del proyecto
-
-```text
-TO_Practica05_SOLID/
-├── 01_SRP/
-│   └── src/
-│       └── main.cpp
-├── 02_OCP/
-│   └── src/
-│       └── main.cpp
-├── 03_LSP/
-│   └── src/
-│       └── main.cpp
-├── 04_ISP/
-│   └── src/
-│       └── main.cpp
-├── 05_DIP/
-│   └── src/
-│       └── main.cpp
-├── 06_Integracion_SOLID/
-│   └── src/
-│       └── main.cpp
-└── README.md
-```
-
-## Distribución del trabajo
-
-- **Persona 1 — Ejercicio 01 (SRP):** separar la disponibilidad de `Habitacion` mediante `GestorDisponibilidadHabitacion`.
-- **Persona 2 — Ejercicio 02 (OCP):** implementar políticas de cancelación Flexible, Moderada y Estricta mediante una interfaz.
-- **Persona 3 — Ejercicio 03 (LSP):** implementar subclases de `Habitacion` respetando el contrato de la clase base y demostrar polimorfismo.
-- **Persona 4 — Ejercicios 04 (ISP) y 05 (DIP):** dividir las interfaces de servicios e implementar notificaciones mediante inyección de dependencias.
-- **Todos — Ejercicio 06:** integrar los principios SOLID en el sistema de reservas.
-
 ## Requisitos
 
 - Compilador `g++` compatible con C++17.
@@ -144,5 +103,3 @@ g++ -std=c++17 06_Integracion_SOLID/src/*.cpp -o 06_Integracion_SOLID/ejercicio
 ```bash
 ./06_Integracion_SOLID/ejercicio
 ```
-
-> **Estado inicial:** cada carpeta contiene un `main.cpp` provisional, únicamente para comprobar la compilación y ejecución. La implementación de los ejercicios está pendiente.
