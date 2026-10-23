@@ -63,7 +63,7 @@ g++ -std=c++17 05_DIP/src/*.cpp -o 05_DIP/ejercicio
 ## 6. 06_Integracion_SOLID/
 
 ```bash
-g++ -std=c++17 06_Integracion_SOLID/src/*.cpp -o 06_Integracion_SOLID/ejercicio
+g++ -std=c++17 06_Integracion_SOLID/src/main.cpp 06_Integracion_SOLID/src/*/*.cpp -o 06_Integracion_SOLID/ejercicio
 ```
 
 # Ejecutar
