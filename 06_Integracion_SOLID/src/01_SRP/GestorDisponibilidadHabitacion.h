@@ -1,9 +1,23 @@
 #pragma once
+#include <string>
+#include <vector>
 
-// Ejercicio 06 - SRP
-// Responsable: Persona 1
+// Responsabilidad unica: administrar ocupacion, nunca calcular tarifas.
 class GestorDisponibilidadHabitacion {
 public:
-    // TODO (Persona 1): Verificar la disponibilidad en un rango de fechas usando la lista de reservas.
-    // TODO (Persona 1): Gestionar las operaciones de disponibilidad sin mezclarlas con precios.
+    struct Ocupacion {
+        int identificador;
+        int habitacionId;
+        std::string entrada;
+        std::string salida; // fecha de salida excluida
+    };
+    bool estaDisponible(int habitacionId, const std::string& entrada,
+                        const std::string& salida) const;
+    int reservar(int habitacionId, const std::string& entrada,
+                const std::string& salida);
+    bool cancelar(int identificador);
+    const std::vector<Ocupacion>& obtenerOcupaciones() const;
+private:
+    std::vector<Ocupacion> ocupaciones_;
+    int siguienteId_ = 1;
 };
