@@ -57,7 +57,7 @@ g++ -std=c++17 04_ISP/src/*.cpp -o 04_ISP/ejercicio
 ## 5. 05_DIP/
 
 ```bash
-g++ -std=c++17 05_DIP/src/*.cpp -o 05_DIP/ejercicio
+g++ -std=c++17 05_DIP/src/*.cpp 06_Integracion_SOLID/src/04_ISP_DIP/*.cpp -o 05_DIP/ejercicio
 ```
 
 ## 6. 06_Integracion_SOLID/

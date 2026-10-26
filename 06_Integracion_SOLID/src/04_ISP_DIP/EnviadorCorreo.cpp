@@ -1,6 +1,6 @@
 #include "EnviadorCorreo.h"
+#include <iostream>
 
-// Ejercicio 06 - DIP
-// Responsable: Persona 4
-// Implementar aquí los métodos declarados en EnviadorCorreo.h.
-// TODO (Persona 4): Implementar un canal para enviar notificaciones por correo.
+void EnviadorCorreo::enviarNotificacion(const std::string& mensaje) {
+    std::cout << "[Correo simulado] " << mensaje << '\n';
+}

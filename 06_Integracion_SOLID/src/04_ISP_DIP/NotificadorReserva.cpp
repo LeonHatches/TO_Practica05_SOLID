@@ -1,7 +1,15 @@
 #include "NotificadorReserva.h"
+#include <stdexcept>
+#include <string>
 
-// Ejercicio 06 - DIP
-// Responsable: Persona 4
-// Implementar aquí los métodos declarados en NotificadorReserva.h.
-// TODO (Persona 4): Recibir la abstracción CanalNotificacion mediante inyección de dependencias.
-// TODO (Persona 4): Enviar notificaciones sin depender de EnviadorCorreo o EnviadorSMS concretos.
+NotificadorReserva::NotificadorReserva(CanalNotificacion& canal) : canal_(canal) {}
+
+void NotificadorReserva::notificarConfirmacion(int idReserva) {
+    if (idReserva <= 0) throw std::invalid_argument("Identificador de reserva invalido.");
+    canal_.enviarNotificacion("Reserva " + std::to_string(idReserva) + " confirmada.");
+}
+
+void NotificadorReserva::notificarCancelacion(int idReserva) {
+    if (idReserva <= 0) throw std::invalid_argument("Identificador de reserva invalido.");
+    canal_.enviarNotificacion("Reserva " + std::to_string(idReserva) + " cancelada.");
+}
