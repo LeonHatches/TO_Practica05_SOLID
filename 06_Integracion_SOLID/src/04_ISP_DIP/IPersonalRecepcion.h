@@ -1,10 +1,9 @@
 #pragma once
+#include <string>
 
-// Ejercicio 06 - ISP
-// Responsable: Persona 4
 class IPersonalRecepcion {
 public:
     virtual ~IPersonalRecepcion() = default;
-
-    // TODO (Persona 4): Definir solo las operaciones necesarias para recepción.
+    virtual void registrarEntrada(int idReserva) = 0;
+    virtual void registrarSalida(int idReserva) = 0;
 };
