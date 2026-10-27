@@ -1,9 +1,22 @@
 #pragma once
+#include <string>
+#include <functional>
 
-// Ejercicio 06 - SRP
-// Responsable: Persona 1
+// SRP: calcula tarifas; no crea ni modifica reservas.
 class CalculadoraPrecioHabitacion {
 public:
-    // TODO (Persona 1): Calcular precios por tipo de habitación, fecha y temporada.
-    // TODO (Persona 1): Aplicar las estrategias de Promocion de la Persona 2.
+    enum class Temporada { Baja, Regular, Alta };
+    // Adaptador para conectar las estrategias Promocion de la Persona 2.
+    // Recibe subtotal y devuelve importe final (no negativo).
+    using EstrategiaPromocion = std::function<double(double)>;
+    struct Cotizacion {
+        int noches;
+        double tarifaPorNoche;
+        double factorTemporada;
+        double subtotal;
+        double total;
+    };
+    Cotizacion calcular(double tarifaPorNoche, const std::string& entrada,
+                        const std::string& salida, Temporada temporada,
+                        const EstrategiaPromocion& promocion = {}) const;
 };
