@@ -1,9 +1,26 @@
-#pragma once
+#ifndef HABITACION_H
+#define HABITACION_H
 
-// Ejercicio 06 - LSP
-// Responsable: Persona 3
+#include <string>
+
 class Habitacion {
+protected:
+    int numero;
+    int capacidad;
+    double tarifaPorNoche;
+
 public:
-    // TODO (Persona 3): Definir atributos y contrato común para todas las habitaciones.
-    // TODO (Persona 3): Permitir sustituir objetos de habitación por subclases sin alterar el comportamiento.
+    Habitacion(int numero, int capacidad, double tarifa);
+
+    virtual ~Habitacion() = default;
+
+    int getNumero() const;
+    int getCapacidad() const;
+    double getTarifaPorNoche() const;
+
+    virtual std::string getTipo() const = 0;
+
+    bool admiteHuespedes(int cantidad) const;
 };
+
+#endif

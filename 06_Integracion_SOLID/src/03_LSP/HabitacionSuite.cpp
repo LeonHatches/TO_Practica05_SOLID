@@ -1,6 +1,8 @@
 #include "HabitacionSuite.h"
 
-// Ejercicio 06 - LSP
-// Responsable: Persona 3
-// Implementar aquí los métodos declarados en HabitacionSuite.h.
-// TODO (Persona 3): Implementar una suite que respete el contrato base.
+HabitacionSuite::HabitacionSuite(int numero)
+    : Habitacion(numero, 4, 280.0) {}
+
+std::string HabitacionSuite::getTipo() const {
+    return "Suite";
+}

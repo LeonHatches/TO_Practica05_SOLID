@@ -1,10 +1,12 @@
-#pragma once
+#ifndef HABITACION_ESTANDAR_H
+#define HABITACION_ESTANDAR_H
 
 #include "Habitacion.h"
 
-// Ejercicio 06 - LSP
-// Responsable: Persona 3
 class HabitacionEstandar : public Habitacion {
 public:
-    // TODO (Persona 3): Implementar una habitación estándar que respete el contrato base.
+    explicit HabitacionEstandar(int numero);
+    std::string getTipo() const override;
 };
+
+#endif

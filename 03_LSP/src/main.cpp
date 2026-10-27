@@ -1,6 +1,6 @@
-#include "HabitacionEstandar.h"
-#include "HabitacionSuite.h"
-#include "HabitacionPremium.h"
+#include "../../06_Integracion_SOLID/src/03_LSP/HabitacionEstandar.h"
+#include "../../06_Integracion_SOLID/src/03_LSP/HabitacionSuite.h"
+#include "../../06_Integracion_SOLID/src/03_LSP/HabitacionPremium.h"
 #include <iostream>
 
 void mostrarHabitacion(const Habitacion& habitacion) {

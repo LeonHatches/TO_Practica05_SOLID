@@ -1,10 +1,12 @@
-#pragma once
+#ifndef HABITACION_SUITE_H
+#define HABITACION_SUITE_H
 
 #include "Habitacion.h"
 
-// Ejercicio 06 - LSP
-// Responsable: Persona 3
 class HabitacionSuite : public Habitacion {
 public:
-    // TODO (Persona 3): Implementar una suite que respete el contrato base.
+    explicit HabitacionSuite(int numero);
+    std::string getTipo() const override;
 };
+
+#endif

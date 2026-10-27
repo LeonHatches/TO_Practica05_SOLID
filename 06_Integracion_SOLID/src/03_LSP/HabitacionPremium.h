@@ -1,10 +1,12 @@
-#pragma once
+#ifndef HABITACION_PREMIUM_H
+#define HABITACION_PREMIUM_H
 
 #include "Habitacion.h"
 
-// Ejercicio 06 - LSP
-// Responsable: Persona 3
 class HabitacionPremium : public Habitacion {
 public:
-    // TODO (Persona 3): Implementar una habitación premium que respete el contrato base.
+    explicit HabitacionPremium(int numero);
+    std::string getTipo() const override;
 };
+
+#endif

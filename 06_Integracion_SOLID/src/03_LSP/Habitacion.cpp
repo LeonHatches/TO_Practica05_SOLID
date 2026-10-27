@@ -1,7 +1,26 @@
 #include "Habitacion.h"
+#include <stdexcept>
 
-// Ejercicio 06 - LSP
-// Responsable: Persona 3
-// Implementar aquí los métodos declarados en Habitacion.h.
-// TODO (Persona 3): Definir atributos y contrato común para todas las habitaciones.
-// TODO (Persona 3): Permitir sustituir objetos de habitación por subclases sin alterar el comportamiento.
+Habitacion::Habitacion(int numero, int capacidad, double tarifa)
+    : numero(numero), capacidad(capacidad), tarifaPorNoche(tarifa) {
+
+    if (numero <= 0 || capacidad <= 0 || tarifa <= 0) {
+        throw std::invalid_argument("Datos de habitacion invalidos.");
+    }
+}
+
+int Habitacion::getNumero() const {
+    return numero;
+}
+
+int Habitacion::getCapacidad() const {
+    return capacidad;
+}
+
+double Habitacion::getTarifaPorNoche() const {
+    return tarifaPorNoche;
+}
+
+bool Habitacion::admiteHuespedes(int cantidad) const {
+    return cantidad > 0 && cantidad <= capacidad;
+}
