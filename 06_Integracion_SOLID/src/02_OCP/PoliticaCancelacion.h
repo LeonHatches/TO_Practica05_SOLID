@@ -1,10 +1,14 @@
 #pragma once
 
-// Ejercicio 06 - OCP
-// Responsable: Persona 2
+#include <ctime>
+
+class Reserva;
+
 class PoliticaCancelacion {
 public:
     virtual ~PoliticaCancelacion() = default;
 
-    // TODO (Persona 2): Definir el contrato puedeCancelar(Reserva reserva) y penalización aplicable.
+    virtual bool puedeCancelar(const Reserva& reserva,
+                               std::time_t fechaCancelacion) const = 0;
+    virtual double calcularPenalizacion(const Reserva& reserva) const = 0;
 };
