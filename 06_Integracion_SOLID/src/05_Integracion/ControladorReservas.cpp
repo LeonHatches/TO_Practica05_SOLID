@@ -6,8 +6,59 @@
 
 // TODO (Persona 1): Conectar disponibilidad y calculo de precios.
 // TODO (Persona 2): Conectar reservas, cancelaciones y promociones.
-// TODO (Persona 4): Conectar servicios y notificaciones.
+// Persona 4: Servicios y notificaciones mediante dependencias inyectadas.
 // TODO (Todos): Comprobar el funcionamiento conjunto y los cinco principios SOLID.
+
+ControladorReservas::ControladorReservas(
+    ServicioLimpieza& limpieza, ServicioComida& comida,
+    ServicioLavanderia& lavanderia, IPersonalRecepcion& recepcion,
+    NotificadorReserva& notificador)
+    : limpieza_(&limpieza), comida_(&comida), lavanderia_(&lavanderia),
+      recepcion_(&recepcion), notificador_(&notificador) {}
+
+bool ControladorReservas::solicitarLimpieza(int numeroHabitacion) {
+    if (!limpieza_ || !buscarHabitacion(numeroHabitacion)) return false;
+    limpieza_->limpiarHabitacion(numeroHabitacion);
+    return true;
+}
+
+bool ControladorReservas::solicitarComida(
+    int numeroHabitacion, const std::string& pedido) {
+    if (!comida_ || !buscarHabitacion(numeroHabitacion) ||
+        pedido.find_first_not_of(" \t\r\n") == std::string::npos) return false;
+    comida_->servirComida(numeroHabitacion, pedido);
+    return true;
+}
+
+bool ControladorReservas::solicitarLavanderia(int numeroHabitacion) {
+    if (!lavanderia_ || !buscarHabitacion(numeroHabitacion)) return false;
+    lavanderia_->lavarRopa(numeroHabitacion);
+    return true;
+}
+
+bool ControladorReservas::registrarEntrada(int idReserva) {
+    if (!recepcion_ || idReserva <= 0) return false;
+    recepcion_->registrarEntrada(idReserva);
+    return true;
+}
+
+bool ControladorReservas::registrarSalida(int idReserva) {
+    if (!recepcion_ || idReserva <= 0) return false;
+    recepcion_->registrarSalida(idReserva);
+    return true;
+}
+
+bool ControladorReservas::notificarConfirmacion(int idReserva) {
+    if (!notificador_ || idReserva <= 0) return false;
+    notificador_->notificarConfirmacion(idReserva);
+    return true;
+}
+
+bool ControladorReservas::notificarCancelacion(int idReserva) {
+    if (!notificador_ || idReserva <= 0) return false;
+    notificador_->notificarCancelacion(idReserva);
+    return true;
+}
 
 // Persona 3: Registrar habitaciones
 bool ControladorReservas::registrarHabitacion(
