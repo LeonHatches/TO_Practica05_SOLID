@@ -2,9 +2,9 @@
 
 #include "PoliticaCancelacion.h"
 
-// Ejercicio 06 - OCP
-// Responsable: Persona 2
 class PoliticaCancelacionFlexible : public PoliticaCancelacion {
 public:
-    // TODO (Persona 2): Permitir cancelación sin penalización hasta 24 horas antes del check-in.
+    bool puedeCancelar(const Reserva& reserva,
+                       std::time_t fechaCancelacion) const override;
+    double calcularPenalizacion(const Reserva& reserva) const override;
 };
