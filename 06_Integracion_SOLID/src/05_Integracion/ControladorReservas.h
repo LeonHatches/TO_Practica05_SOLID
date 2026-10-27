@@ -6,7 +6,7 @@
 #include <vector>
 
 // Ejercicio 06 - Integracion
-// Responsable: Persona 3 (coordinacion) y Todos
+// Responsable: Persona 3 - Integración final
 
 class ControladorReservas {
 private:
