@@ -2,9 +2,12 @@
 
 #include "Promocion.h"
 
-// Ejercicio 06 - OCP
-// Responsable: Persona 2
 class PromocionTemporadaAlta : public Promocion {
+private:
+    double porcentajeDescuento;
+    bool esTemporadaAlta;
+
 public:
-    // TODO (Persona 2): Implementar la estrategia para promociones en temporada alta.
+    PromocionTemporadaAlta(double porcentajeDescuento, bool esTemporadaAlta);
+    double aplicar(double subtotal) const override;
 };

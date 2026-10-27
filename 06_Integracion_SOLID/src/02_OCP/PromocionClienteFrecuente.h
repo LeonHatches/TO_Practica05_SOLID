@@ -2,9 +2,12 @@
 
 #include "Promocion.h"
 
-// Ejercicio 06 - OCP
-// Responsable: Persona 2
 class PromocionClienteFrecuente : public Promocion {
+private:
+    double porcentajeDescuento;
+    bool esClienteFrecuente;
+
 public:
-    // TODO (Persona 2): Implementar el descuento de cliente frecuente.
+    PromocionClienteFrecuente(double porcentajeDescuento, bool esClienteFrecuente);
+    double aplicar(double subtotal) const override;
 };
