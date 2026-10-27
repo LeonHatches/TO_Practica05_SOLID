@@ -2,7 +2,7 @@
 #include <utility>
 
 // Ejercicio 06 - Integracion
-// Responsable: Persona 3 (coordinacion) y Todos
+// Responsable: Persona 3 - Integración final
 
 // TODO (Persona 1): Conectar disponibilidad y calculo de precios.
 // TODO (Persona 2): Conectar reservas, cancelaciones y promociones.
