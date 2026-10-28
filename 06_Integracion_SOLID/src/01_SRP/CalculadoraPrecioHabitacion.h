@@ -6,7 +6,7 @@
 class CalculadoraPrecioHabitacion {
 public:
     enum class Temporada { Baja, Regular, Alta };
-    // Adaptador para conectar las estrategias Promocion de la Persona 2.
+    // Estrategia de descuento aplicable al subtotal.
     // Recibe subtotal y devuelve importe final (no negativo).
     using EstrategiaPromocion = std::function<double(double)>;
     struct Cotizacion {
